@@ -1,0 +1,7 @@
+{
+    "require": {
+        "webmozart/json": "^1.2",
+        "psr/http-message": "^1.0",
+        "guzzlehttp/guzzle": "^6.2"
+    }
+}
