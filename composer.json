@@ -1,7 +1,29 @@
 {
+    "name": "shrikeh/pagerduty-core",
+    "type": "library",
+    "description": "Core PagerDuty domain logic",
+    "keywords": ["framework"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Barney Hanlon",
+            "email": "barney@shrikeh.net"
+        }
+    ],
     "require": {
         "webmozart/json": "^1.2",
         "psr/http-message": "^1.0",
         "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+      "phpspec/phpspec": "^3.1"
+    },
+    "config": {
+      "bin-dir": "bin"
+    },
+    "autoload": {
+      "psr-4": {
+        "Shrikeh\\PagerDuty\\": "src"
+      }
     }
 }
