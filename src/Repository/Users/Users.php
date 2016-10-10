@@ -11,10 +11,6 @@ use Shrikeh\PagerDuty\Hydrator;
 
 final class Users implements UsersRepositoryInterface
 {
-    const CONTACT_METHODS     = 'contact_methods';
-    const NOTIFICATION_RULES  = 'notification_rules';
-    const TEAMS               = 'teams';
-
     private $client;
 
     private $hydrator;
