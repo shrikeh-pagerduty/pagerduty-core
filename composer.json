@@ -14,7 +14,7 @@
         "webmozart/json": "^1.2",
         "psr/http-message": "^1.0",
         "guzzlehttp/guzzle": "^6.2",
-        "shrikeh/collections": "dev-master"
+        "shrikeh/collections": "^1.0"
     },
     "require-dev": {
       "phpspec/phpspec": "^3.1"

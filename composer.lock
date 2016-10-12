@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4042f31163da9e07586a93494620df4c",
-    "content-hash": "3001d6288f02a41febba6bcad71ec12c",
+    "hash": "88134b3cd670cfeab3649dc8e780386d",
+    "content-hash": "4ec0b3078084b6f6ce41bed3a682b32f",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -349,16 +349,16 @@
         },
         {
             "name": "shrikeh/collections",
-            "version": "dev-master",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shrikeh/php-immutable-collections.git",
-                "reference": "429e1853a724b2c5bfd1f09caaa823766bc77fae"
+                "reference": "b9909e716a0465cd101c025ed127adfd43941827"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shrikeh/php-immutable-collections/zipball/429e1853a724b2c5bfd1f09caaa823766bc77fae",
-                "reference": "429e1853a724b2c5bfd1f09caaa823766bc77fae",
+                "url": "https://api.github.com/repos/shrikeh/php-immutable-collections/zipball/b9909e716a0465cd101c025ed127adfd43941827",
+                "reference": "b9909e716a0465cd101c025ed127adfd43941827",
                 "shasum": ""
             },
             "require-dev": {
@@ -385,7 +385,7 @@
             "keywords": [
                 "library"
             ],
-            "time": "2016-10-11 14:35:10"
+            "time": "2016-10-12 11:17:32"
         },
         {
             "name": "webmozart/assert",
@@ -1596,9 +1596,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "shrikeh/collections": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
