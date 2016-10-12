@@ -2,7 +2,7 @@
 
 namespace Shrikeh\PagerDuty\Collection;
 
-use Shrikeh\Collection\ImmutableBoilerPlate;
+use Shrikeh\Collection\ImmutableBoilerplate;
 use Shrikeh\PagerDuty\Collection;
 use Shrikeh\PagerDuty\Entity\EscalationPolicy;
 
