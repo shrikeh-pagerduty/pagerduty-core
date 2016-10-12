@@ -15,7 +15,7 @@ class EscalationPoliciesSpec extends ObjectBehavior
         EscalationPolicy $policy2,
         EscalationPolicy $policy3
     ) {
-        $this->beConstructedWith([$policy1, $policy2, $policy3]);
+        $this->beConstructedThroughFromArray([$policy1, $policy2, $policy3]);
     }
 
     function it_throws_an_exception_if_you_try_to_set_a_policy(

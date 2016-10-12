@@ -2,25 +2,16 @@
 
 namespace Shrikeh\PagerDuty\Collection;
 
-use IteratorIterator;
+use Shrikeh\Collection\ImmutableBoilerPlate;
 use Shrikeh\PagerDuty\Collection;
 use Shrikeh\PagerDuty\Entity\EscalationPolicy;
 
-final class EscalationPolicies extends IteratorIterator implements Collection
+final class EscalationPolicies extends ImmutableBoilerPlate implements Collection
 {
-    use \Shrikeh\PagerDuty\Collection\ImmutableCollection;
+    use \Shrikeh\PagerDuty\Collection\Traits\ThrowImmutable;
 
-    public function __construct($escalationPolicies)
+    protected function append(EscalationPolicy $policy)
     {
-        parent::__construct(new \SplObjectStorage());
-        foreach ($escalationPolicies as $policy) {
-            $this->appendPolicy($policy);
-        }
-        $this->getInnerIterator()->rewind();
-    }
-
-    private function appendPolicy(EscalationPolicy $policy)
-    {
-        $this->getInnerIterator()->attach($policy);
+        $this->getStorage()->attach($policy);
     }
 }

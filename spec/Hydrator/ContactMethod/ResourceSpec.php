@@ -18,7 +18,7 @@ class ResourceSpec extends ObjectBehavior
         Hydrator $sms,
         Hydrator $push
     ) {
-        $this->beConstructedWith([$phone, $email, $sms, $push]);
+        $this->beConstructedThroughFromArray([$phone, $email, $sms, $push]);
     }
 
     function it_returns_true_if_it_supports_the_token()

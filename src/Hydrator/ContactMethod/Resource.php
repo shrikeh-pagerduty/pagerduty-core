@@ -2,33 +2,20 @@
 
 namespace Shrikeh\PagerDuty\Hydrator\ContactMethod;
 
-
 use stdClass;
-use IteratorIterator;
-use SplObjectStorage;
+
+use Shrikeh\Collection\ImmutableBoilerPlate;
 use Shrikeh\PagerDuty\Hydrator;
 use Shrikeh\PagerDuty\Collection;
-use Shrikeh\PagerDuty\Collection\ImmutableCollection;
 
-class Resource extends IteratorIterator implements Collection, Hydrator
+class Resource extends ImmutableBoilerPlate implements Collection, Hydrator
 {
-    use ImmutableCollection;
-
-    private $hydrators;
-
-    public function __construct(array $resourceHydrators = array())
-    {
-        parent::__construct(new SplObjectStorage());
-        foreach ($resourceHydrators as $hydrator) {
-            $this->addHydrator($hydrator);
-        }
-        $this->getInnerIterator()->rewind();
-    }
+    use \Shrikeh\PagerDuty\Collection\Traits\ThrowImmutable;
 
     public function hydrate(stdClass $dto)
     {
         if (isset($dto->type)) {
-            foreach ($this->getInnerIterator() as $hydrator) {
+            foreach ($this->getStorage() as $hydrator) {
                 if ($hydrator->supports($dto->type)) {
                     return $hydrator->hydrate($dto);
                 }
@@ -41,8 +28,8 @@ class Resource extends IteratorIterator implements Collection, Hydrator
         return 'type' === $token;
     }
 
-    private function addHydrator(Hydrator $hydrator)
+    protected function append(Hydrator $hydrator)
     {
-        $this->getInnerIterator()->attach($hydrator);
+        $this->getStorage()->attach($hydrator);
     }
 }

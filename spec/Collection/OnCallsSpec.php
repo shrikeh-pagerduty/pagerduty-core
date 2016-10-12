@@ -9,15 +9,6 @@ use Prophecy\Argument;
 
 class OnCallsSpec extends ObjectBehavior
 {
-    // public function getMatchers()
-    // {
-    //   return [
-    //       'haveEntry(' => function (OnCalls $subject, OnCall $key) {
-    //           return $subject->getInnerIterator()->offsetExists($key);
-    //       }
-    //   ];
-    // }
-
     public function let(
         OnCall $entry1,
         OnCall $entry2,
@@ -26,7 +17,7 @@ class OnCallsSpec extends ObjectBehavior
         $entry1->level()->willReturn(1);
         $entry2->level()->willReturn(2);
         $entry3->level()->willReturn(3);
-        $this->beConstructedWith([$entry1, $entry2, $entry3]);
+        $this->beConstructedThroughFromArray([$entry1, $entry2, $entry3]);
     }
 
     function it_returns_a_new_collection_when_filtered_by_level(
@@ -39,17 +30,13 @@ class OnCallsSpec extends ObjectBehavior
         );
     }
 
-    function it_throws_an_exception_if_you_try_to_set_an_oncall(
-        $entry2
-    ) {
+    function it_throws_an_exception_if_you_try_to_set_an_oncall($entry2) {
         $this->shouldThrow(
             'Shrikeh\PagerDuty\Collection\Exception\ImmutableCollectionException'
         )->duringOffsetSet($entry2, 'foo');
     }
 
-    function it_throws_an_exception_if_you_try_to_unset_an_oncall(
-        $entry1
-    ) {
+    function it_throws_an_exception_if_you_try_to_unset_an_oncall($entry1) {
         $this->shouldThrow(
             'Shrikeh\PagerDuty\Collection\Exception\ImmutableCollectionException'
         )->duringOffsetUnset($entry1);

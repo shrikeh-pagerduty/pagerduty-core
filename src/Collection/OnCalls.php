@@ -2,39 +2,28 @@
 
 namespace Shrikeh\PagerDuty\Collection;
 
-use IteratorIterator;
-use SplObjectStorage;
+use Shrikeh\Collection\ImmutableBoilerPlate;
 use Shrikeh\PagerDuty\Collection;
 use Shrikeh\PagerDuty\Entity\OnCall;
 
-final class OnCalls extends IteratorIterator implements Collection
+final class OnCalls extends ImmutableBoilerPlate implements Collection
 {
-    use \Shrikeh\PagerDuty\Collection\ImmutableCollection;
+    use \Shrikeh\PagerDuty\Collection\Traits\ThrowImmutable;
 
-    public function __construct($onCalls)
+    protected function append(OnCall $oncall)
     {
-        parent::__construct(new SplObjectStorage());
-
-        foreach ($onCalls as $oncall) {
-            $this->appendOnCall($oncall);
-        }
-        $this->getInnerIterator()->rewind();
-    }
-
-    private function appendOnCall(OnCall $oncall)
-    {
-        $this->getInnerIterator()->attach($oncall);
+        $this->getStorage()->attach($oncall);
     }
 
     public function filteredByLevel($level)
     {
         $oncalls = [];
 
-        foreach ($this->getInnerIterator() as $oncall) {
+        foreach ($this->getStorage() as $oncall) {
             if ($oncall->level() === $level) {
                 $oncalls[] = $oncall;
             }
         }
-        return new static($oncalls);
+        return static::fromArray($oncalls);
     }
 }

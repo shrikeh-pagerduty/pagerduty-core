@@ -2,9 +2,9 @@
 
 namespace Shrikeh\PagerDuty\Collection\Exception;
 
-use DomainException;
+use Shrikeh\Collection\Exception\ImmutableCollection;
 
-class ImmutableCollectionException extends DomainException
+class ImmutableCollectionException extends ImmutableCollection
 {
-  
+
 }
