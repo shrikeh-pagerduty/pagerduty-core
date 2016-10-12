@@ -39,16 +39,24 @@ final class ContactMethods extends FilterIterator implements Collection
     {
         $methods = [];
         foreach ($this->getStorage() as $contactMethod) {
-            if ($excludeBlacklisted) {
-                if ($this->isBlacklisted($contactMethod)) {
-                    continue;
-                }
-            }
             if ($contactMethod->method() == $resource) {
                 $methods[] = $contactMethod;
             }
         }
+        if ($excludeBlacklisted) {
+            $methods = $this->filterBlacklisted($methods);
+        }
         return static::fromArray($methods);
+    }
+
+    private function filterBlacklisted($methods) {
+        $whitelist = [];
+        foreach ($methods as $contactMethod) {
+            if (!$this->isBlacklisted($contactMethod)) {
+                $whitelist[] = $contactMethod;
+            }
+        }
+        return $whitelist;
     }
 
     private function isBlacklisted(ContactMethod $contactMethod)
