@@ -3,9 +3,6 @@ sudo: false
 cache:
   directories:
   - "$HOME/.composer/cache"
-env:
-  global:
-    secure: Qjd84oo+KEUQ3ZsD2ed8dAgjMoRGLPullVztYdMfIY4cS+8GDbDU+A+HcxFAjVcHPlwa5JXXjTy/ccJGxkAytR9/fUfeNNEeMBoNXfHDuv5iaHHXYHfgQeMuu5TTmdkeh8dEqTfNZShuI7i7nvpE8Ze7Oh+5ygZ3nB8rSxHYVrWAm54/JAum/O3dUp3otMgHAcLY/+MZWZ7Qzm2pBjZxbIib9YECNzmsHxwVSivBPz7fUZDQ/AeFOeFiYqPiZ+fPRBuq3xwDxfvnsGpQuAtNZrysienhnWFTNQZdegz5LcoDHYnqdAREciejzjctnk1YpUwfTFtZMYJptbYArkaC59PO6xLry2pP808XzwVN7HDQstoKxORtvc9/PAdQEEBiIb3J0M3MTPdrtVqLDhMXhUarOwT/aDqiC+I9AcQTo2HWv9KOs6SzT9tKlUB06pE2bF0YfvVd1umXAyYD9FCbK4/bSgV0EF1VJo8Jl0sAI2BwC2c8VVXy0G46rY6qtPDhOeQqQB0pwXRD+gSCrDoXzYWqXKrYLwI4Q3LvZU9PWeMuiB0gwRbhut2pzu2u9JVzr3ydZuhdOZFBHMDiJmnTMNCurz/fQqU54A+1ydEiZ6C44YUvNhRzIUuJiaH0JhGh4OLlgliAkoEAByJhmG1XozCe81tsCqFFZ2BMqfPGaKs=
 matrix:
   include:
   - php: 5.6
