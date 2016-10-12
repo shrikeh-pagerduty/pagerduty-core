@@ -1,0 +1,31 @@
+language: php
+sudo: false
+cache:
+  directories:
+  - "$HOME/.composer/cache"
+env:
+  global:
+    secure: qOS5AQyl0t8D7NlWAGcZmdqm7n1jP4Hb1rpgHckPNQHPYgbHTpID5hZ89O/uedi5HbRAMaQFyqvnFEx6dhxwYUWrmXv8cd4Dv+DUzKI2teV+1TY7JwWiDKPwVzH+ZlStk4cKCz0fCfhp1moNEjqP+pPXuTqpyf7tF/dAT/q+/evgVU30h74qOr6SnAnk6pZe4xL6hfbsiXDVBxRi0o9tudIMAWM/1/6LArHjsQUu6Nhx0zvrZvDNJByZRTt3kRqpzi+J/8r/2+lf1KU43WO7wnxDkEIho0c8MQHABuTF1MdFXC2V94ak6weBEooCLA3TcTWDMSPT0tAs2QvRI0V4vDH7SUFdjKe3w/G0j6iHRXYT9JMFrTJFmtQ75IUP6p5F8Vr0a7Vlyw9SQvGxj/RekHYCPYVGFKLT3hs0hiIHyMrwCmZj/iHIhG9NcMT/7p3QS3Y/qV2Fi1+xpjXSMbPJjQxP5Q2UOMrHO+iHb4LoTJtLLhrK6PeML188RNYKRi07wx+VSopnAw3BdpGx4pmATshC3FTj8cKH6+0fKuGiB5ajHv1JxfSJHfkbDuZkbiOWMa2I6QtBFZq3FsHTFh5a5tR9OrHaEGxEKPM8F51DuPsDWEXsSfYsgQKtoyDBmopPsDMTXl66xfEoi/+T14rB/41KyAiT3XiqZqjE778hoBw=
+matrix:
+  include:
+  - php: 5.6
+    env: DEPENDENCIES='low'
+  - php: 5.6
+  - php: hhvm
+  - php: 7.0
+  - php: 7.0
+    env: DEPENDENCIES='dev'
+  allow_failures:
+  - env: DEPENDENCIES='dev'
+  fast_finish: true
+before_install:
+- if [ "$TRAVIS_PHP_VERSION" != 'hhvm' ]; then phpenv config-rm xdebug.ini; fi
+- composer selfupdate
+install:
+- export COMPOSER_ROOT_VERSION=dev-master;
+- export COMPOSER_NO_INTERACTION=1;
+- if [ "$DEPENDENCIES" == 'dev' ]; then perl -pi -e 's/^}$/,"minimum-stability":"dev"}/'composer.json; fi;
+- if [ "$DEPENDENCIES" != 'low' ]; then composer update --prefer-dist --classmap-authoritative;; fi;
+- if [ "$DEPENDENCIES" == 'low' ]; then composer update --prefer-lowest --prefer-dist --classmap-authoritative;fi;
+script:
+- bin/phpspec run --format=pretty
