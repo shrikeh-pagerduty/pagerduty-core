@@ -6,7 +6,7 @@ use Shrikeh\Collection\ImmutableBoilerPlate;
 use Shrikeh\PagerDuty\Collection;
 use Shrikeh\PagerDuty\Entity\EscalationPolicy;
 
-final class EscalationPolicies extends ImmutableBoilerPlate implements Collection
+final class EscalationPolicies extends ImmutableBoilerplate implements Collection
 {
     use \Shrikeh\PagerDuty\Collection\Traits\ThrowImmutable;
 
