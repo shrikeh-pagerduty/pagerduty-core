@@ -21,11 +21,8 @@ before_install:
 install:
 - export COMPOSER_ROOT_VERSION=dev-master;
 - export COMPOSER_NO_INTERACTION=1;
-- if [ "$DEPENDENCIES" == 'dev' ]; then perl -pi -e 's/^}$/,"minimum-stability":"dev"}/'composer.json;
-  fi;
-- if [ "$DEPENDENCIES" != 'low' ]; then composer update --prefer-dist --classmap-authoritative;;
-  fi;
-- if [ "$DEPENDENCIES" == 'low' ]; then composer update --prefer-lowest --prefer-dist
-  --classmap-authoritative;fi;
+- if [ "$DEPENDENCIES" == 'dev' ]; then perl -pi -e 's/^}$/,"minimum-stability":"dev"}/'composer.json; fi;
+- if [ "$DEPENDENCIES" != 'low' ]; then composer update --prefer-dist --classmap-authoritative; fi;
+- if [ "$DEPENDENCIES" == 'low' ]; then composer update --prefer-lowest --prefer-dist --classmap-authoritative; fi;
 script:
 - bin/phpspec run --format=pretty
