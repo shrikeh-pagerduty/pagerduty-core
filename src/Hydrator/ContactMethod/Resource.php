@@ -3,14 +3,26 @@
 namespace Shrikeh\PagerDuty\Hydrator\ContactMethod;
 
 use stdClass;
-
-use Shrikeh\Collection\ImmutableBoilerPlate;
+use IteratorIterator;
 use Shrikeh\PagerDuty\Hydrator;
 use Shrikeh\PagerDuty\Collection;
+use Shrikeh\Collection\NamedConstructorsTrait;
+use Shrikeh\Collection\ObjectStorageTrait;
+use Shrikeh\Collection\ImmutableCollectionTrait;
+use Shrikeh\Collection\ClosedOuterIteratorTrait;
+use Shrikeh\Collection\OuterIteratorTrait;
+use Shrikeh\PagerDuty\Collection\Traits\ThrowImmutable;
 
-class Resource extends ImmutableBoilerPlate implements Collection, Hydrator
+class Resource extends IteratorIterator implements Collection, Hydrator
 {
-    use \Shrikeh\PagerDuty\Collection\Traits\ThrowImmutable;
+    use NamedConstructorsTrait;
+    use ObjectStorageTrait;
+    use ImmutableCollectionTrait;
+    use ClosedOuterIteratorTrait;
+    use OuterIteratorTrait;
+    use ThrowImmutable {
+        ThrowImmutable::throwImmutable insteadof ImmutableCollectionTrait;
+    }
 
     public function hydrate(stdClass $dto)
     {
