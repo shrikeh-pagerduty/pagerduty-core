@@ -8,3 +8,4 @@
 [![@shrikeh on Twitter](https://img.shields.io/badge/twitter-%40shrikeh-blue.svg)](https://twitter.com/shrikeh)
 
 Core domain layer for interacting with the PagerDuty v2 API in PHP. Returns immutable collections of entities representing the data retrieved.
+Uses Guzzle to contact the API.
