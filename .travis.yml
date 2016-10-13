@@ -16,7 +16,7 @@ before_install:
       TRAVIS_COMMIT_RANGE="FETCH_HEAD...${TRAVIS_BRANCH}"
     fi
     IGNORE_LIST='(\.md|rst$)|(LICENSE$)|(\.scrutinizer\.yml$)|(\.(editorconfig|gitignore|gitattributes)$)|(^(docs|examples))/'
-    git diff --name-only $TRAVIS_COMMIT_RANGE | grep -v --quiet --regexp "${IGNORE_LIST}" || {
+    git diff --name-only $TRAVIS_COMMIT_RANGE | grep -qvE "${IGNORE_LIST}" || {
       echo "No build files updated, stopping build process."
       exit
     }
