@@ -7,23 +7,9 @@ use Shrikeh\PagerDuty\Collection;
 use Shrikeh\PagerDuty\Entity\ContactMethod;
 use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Blacklistable;
 
-use Shrikeh\Collection\NamedConstructorsTrait;
-use Shrikeh\Collection\ObjectStorageTrait;
-use Shrikeh\Collection\ImmutableCollectionTrait;
-use Shrikeh\Collection\ClosedOuterIteratorTrait;
-use Shrikeh\Collection\OuterIteratorTrait;
-use Shrikeh\PagerDuty\Collection\Traits\ThrowImmutable;
-
 final class ContactMethods extends FilterIterator implements Collection
 {
-    use NamedConstructorsTrait;
-    use ObjectStorageTrait;
-    use ImmutableCollectionTrait;
-    use ClosedOuterIteratorTrait;
-    use OuterIteratorTrait;
-    use ThrowImmutable {
-        ThrowImmutable::throwImmutable insteadof ImmutableCollectionTrait;
-    }
+    use \Shrikeh\PagerDuty\Collection\Traits\ImmutableCollection;
 
     private function append(ContactMethod $method)
     {
