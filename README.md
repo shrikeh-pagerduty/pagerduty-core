@@ -9,3 +9,5 @@
 
 Core domain layer for interacting with the PagerDuty v2 API in PHP. Returns immutable collections of entities representing the data retrieved.
 Uses Guzzle to contact the API.
+
+For ease of use, you should consider pagerduty-pimple which has service providers for use with Pimple of Silex.
