@@ -6,22 +6,26 @@ build:
 tools:
   php_code_sniffer:
     filter:
+      paths: [ src/* ]
       excluded-paths: [ spec/*, examples/* ]
     config:
       standard: PSR2
 
   php_analyzer:
     filter:
+      paths: [ src/* ]
       excluded-paths: [ spec/*, examples/* ]
 
   php_sim:
     filter:
+      paths: [ src/* ]
       excluded-paths: [ spec/*, examples/* ]
 
 build_failure_conditions:
     - 'issues.label("coding-style").new.exists'
 
 filter:
+  paths: [ src/* ]
   excluded_paths:
     - docs/*
     - vendor/*
