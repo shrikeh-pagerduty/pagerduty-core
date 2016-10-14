@@ -25,7 +25,7 @@ final class User implements Hydrator
     public function hydrate(stdClass $dto)
     {
         return UserEntity::fromData(
-            new ContactMethods(array_map($this->contactMethodsHydrator, $dto->contact_methods)),
+            ContactMethods::fromArray(array_map($this->contactMethodsHydrator, $dto->contact_methods)),
             $this->uriHydrator->hydrate($dto),
             $dto->name,
             $dto->email,

@@ -38,7 +38,7 @@ final class Users implements UsersRepositoryInterface
 
       $dto = json_decode($response->getBody());
       $users[] = $this->hydrator->hydrate($dto->user);
-      return new UserCollection($users);
+      return UserCollection::fromArray($users);
     }
 
     private function query(array $extras = array())
