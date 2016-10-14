@@ -29,6 +29,6 @@ final class OnCallParser implements OnCallInterface
           $level  = $entry->escalation_level;
           $entries[] =  new OnCall($policy, $user, $level);
         }
-        return new OnCallsCollection($entries);
+        return OnCallsCollection::fromArray($entries);
     }
 }
