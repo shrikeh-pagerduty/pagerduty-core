@@ -12,6 +12,6 @@ final class Users extends IteratorIterator implements Collection
 
     protected function append(User $oncall)
     {
-        $this->getInnerIterator()->attach($oncall);
+        $this->getStorage()->attach($oncall);
     }
 }
