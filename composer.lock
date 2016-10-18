@@ -342,16 +342,16 @@
         },
         {
             "name": "shrikeh/collections",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shrikeh/php-immutable-collections.git",
-                "reference": "61d17cc44c9a34f11642167503230aa8a4465c69"
+                "reference": "4752ccdcffad4d1ed21887b299b8a0186a3d7792"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shrikeh/php-immutable-collections/zipball/61d17cc44c9a34f11642167503230aa8a4465c69",
-                "reference": "61d17cc44c9a34f11642167503230aa8a4465c69",
+                "url": "https://api.github.com/repos/shrikeh/php-immutable-collections/zipball/4752ccdcffad4d1ed21887b299b8a0186a3d7792",
+                "reference": "4752ccdcffad4d1ed21887b299b8a0186a3d7792",
                 "shasum": ""
             },
             "require-dev": {
@@ -378,7 +378,7 @@
             "keywords": [
                 "library"
             ],
-            "time": "2016-10-14 08:22:36"
+            "time": "2016-10-18 10:59:15"
         },
         {
             "name": "webmozart/assert",
