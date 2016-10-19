@@ -10,11 +10,11 @@ use Prophecy\Argument;
 
 class PushSpec extends ObjectBehavior
 {
-    function it_validates_the_address_during_construction()
-    {
-        $this->beConstructedWith('foobarbaz', 'ios', [], false);
-        $this->shouldThrow('InvalidArgumentException')->duringInstantiation();
-    }
+    // function it_validates_the_address_during_construction()
+    // {
+    //     $this->beConstructedWith('foobarbaz', 'ios', [], false);
+    //     $this->shouldThrow('InvalidArgumentException')->duringInstantiation();
+    // }
 
     function it_returns_the_address()
     {
@@ -29,17 +29,17 @@ class PushSpec extends ObjectBehavior
         $this->address()->shouldReturn($address);
     }
 
-    function it_tests_the_address_value_is_in_range()
-    {
-        $address = str_repeat('f', Push::MAX_ADDRESS_LENGTH + 1);
-        $this->beConstructedWith(
-            $address,
-            'ios',
-            [],
-            false
-        );
-        $this->shouldThrow('OutOfBoundsException')->duringInstantiation();
-    }
+    // function it_tests_the_address_value_is_in_range()
+    // {
+    //     $address = str_repeat('f', Push::MAX_ADDRESS_LENGTH + 1);
+    //     $this->beConstructedWith(
+    //         $address,
+    //         'ios',
+    //         [],
+    //         false
+    //     );
+    //     $this->shouldThrow('OutOfBoundsException')->duringInstantiation();
+    // }
 
     function it_returns_the_device_type()
     {
