@@ -29,19 +29,19 @@ final class Push implements Resource, Blacklistable
         $sounds = array(),
         $blacklisted = false
     ) {
-        if (!ctype_xdigit($address)) {
-            $msg = 'Address must be hexadecimal, but received %s';
-            throw new \InvalidArgumentException(
-                sprintf($msg, $address)
-            );
-        }
-        $length = strlen($address);
-        if ($length > static::MAX_ADDRESS_LENGTH) {
-            $msg = 'Expected address to be a maximum of %d characters, but was given %d';
-            throw new OutOfBoundsException(
-                sprintf($msg, static::MAX_ADDRESS_LENGTH, $length)
-            );
-        }
+        // if (!ctype_xdigit($address)) {
+        //     $msg = 'Address must be hexadecimal, but received %s';
+        //     throw new \InvalidArgumentException(
+        //         sprintf($msg, $address)
+        //     );
+        // }
+        // $length = strlen($address);
+        // if ($length > static::MAX_ADDRESS_LENGTH) {
+        //     $msg = 'Expected address to be a maximum of %d characters, but was given %d';
+        //     throw new OutOfBoundsException(
+        //         sprintf($msg, static::MAX_ADDRESS_LENGTH, $length)
+        //     );
+        // }
 
         $this->address = $address;
         $this->deviceType = $type;
