@@ -11,6 +11,16 @@ final class ContactMethods extends FilterIterator implements Collection
 {
     use \Shrikeh\PagerDuty\Collection\Traits\ImmutableCollection;
 
+    public static function mergeFrom(Collection ...$its)
+    {
+        $merge = new \AppendIterator();
+        foreach ($its as $it) {
+            $merge->append($it);
+        }
+        return new static($merge);
+    }
+
+
     private function append(ContactMethod $method)
     {
         $this->getStorage()->attach($method);
