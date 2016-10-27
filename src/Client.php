@@ -2,7 +2,9 @@
 
 namespace Shrikeh\PagerDuty;
 
+use Psr\Http\Message\RequestInterface;
+
 interface Client
 {
-    public function request($method, $uri, array $options = []);
+    public function send(RequestInterface $request, array $options = []);
 }

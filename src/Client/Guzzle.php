@@ -2,8 +2,10 @@
 
 namespace Shrikeh\PagerDuty\Client;
 
+use Psr\Http\Message\RequestInterface;
 use GuzzleHttp\ClientInterface;
 use Shrikeh\PagerDuty\Client;
+use Shrikeh\PagerDuty\Promise\Guzzle as Promise;
 
 class Guzzle implements Client
 {
@@ -14,8 +16,9 @@ class Guzzle implements Client
         $this->client = $client;
     }
 
-    public function request($method, $action, array $options = [])
+    public function send(RequestInterface $request, array $options = [])
     {
-        return $this->client->request($method, $action, $options);
+        $promise = $this->client->sendAsync($request, $options);
+        return new Promise($promise);
     }
 }

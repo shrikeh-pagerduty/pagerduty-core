@@ -15,8 +15,8 @@ final class Guzzle implements Promise
     }
 
     public function then(
-      callable $onFulfilled = null,
-      callable $onRejected = null
+        callable $onFulfilled = null,
+        callable $onRejected = null
     ) {
         return $this->promise->then($onFulfilled, $onRejected);
     }

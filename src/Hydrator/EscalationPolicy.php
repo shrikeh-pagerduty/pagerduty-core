@@ -4,12 +4,28 @@ namespace Shrikeh\PagerDuty\Hydrator;
 
 use stdClass;
 use Shrikeh\PagerDuty\Entity\EscalationPolicy\EscalationPolicy as PolicyEntity;
+use Shrikeh\PagerDuty\Hydrator;
 
-
-class EscalationPolicy
+class EscalationPolicy implements Hydrator
 {
-    public function fromStdClass(stdClass $dto)
+    private $uriHydrator;
+
+    public function __construct(Hydrator $uriHydrator)
     {
-        return new PolicyEntity();
+        $this->uriHydrator = $uriHydrator;
+    }
+
+
+    public function hydrate(stdClass $dto)
+    {
+        return new PolicyEntity(
+            $dto->summary,
+            $dto->id
+        );
+    }
+
+    public function supports($token)
+    {
+        return 'escalation_policy' === $token;
     }
 }
