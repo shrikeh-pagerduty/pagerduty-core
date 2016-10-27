@@ -19,6 +19,11 @@ final class ContactMethod implements Hydrator
         $this->uriHydrator = $uriHydrator;
     }
 
+    public function __invoke(stdClass $dto)
+    {
+        return $this->hydrate($dto);
+    }
+
     public function hydrate(stdClass $dto)
     {
         return ContactMethodEntity::fromApi(
