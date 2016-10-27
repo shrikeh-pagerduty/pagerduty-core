@@ -20,7 +20,8 @@ class EscalationPolicy implements Hydrator
     {
         return new PolicyEntity(
             $dto->summary,
-            $dto->id
+            $dto->id,
+            $this->uriHydrator->hydrate($dto)
         );
     }
 
