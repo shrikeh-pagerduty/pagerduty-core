@@ -8,7 +8,7 @@ use Shrikeh\PagerDuty\Parser;
 use Shrikeh\PagerDuty\Hydrator;
 use Shrikeh\PagerDuty\Decoder\Json;
 
-final class OnCalls implements Parser
+final class Response implements Parser
 {
     private $decoder;
 

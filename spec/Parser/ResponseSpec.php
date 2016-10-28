@@ -12,7 +12,7 @@ use Shrikeh\PagerDuty\Collection;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class OnCallsSpec extends ObjectBehavior
+class ResponseSpec extends ObjectBehavior
 {
     function it_parses_a_response(
         ResponseInterface $response,
