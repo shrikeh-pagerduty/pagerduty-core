@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Shrikeh\PagerDuty\Collection;
+namespace spec\Shrikeh\PagerDuty\Collection\Immutable;
 
 use Shrikeh\PagerDuty\Collection\OnCalls;
 use Shrikeh\PagerDuty\Entity\OnCall;

@@ -5,7 +5,7 @@ namespace Shrikeh\PagerDuty\Hydrator;
 use stdClass;
 use Shrikeh\PagerDuty\Hydrator;
 use Shrikeh\PagerDuty\Entity\OnCall\OnCall;
-use Shrikeh\PagerDuty\Collection\OnCalls as OnCallsCollection;
+use Shrikeh\PagerDuty\Collection\Immutable\OnCalls as OnCallsCollection;
 
 final class OnCalls implements Hydrator
 {

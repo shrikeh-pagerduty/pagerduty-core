@@ -3,10 +3,11 @@
 namespace Shrikeh\PagerDuty\Collection\Promise;
 
 use Shrikeh\PagerDuty\Collection;
-use Shrikeh\PagerDuty\Collection\OnCalls as Storage;
+use Shrikeh\PagerDuty\Collection\OnCalls as OnCallsCollection;
+use Shrikeh\PagerDuty\Collection\Immutable\OnCalls as Storage;
 use Shrikeh\PagerDuty\Callback;
 
-final class OnCalls implements Collection
+final class OnCalls implements Collection, OnCallsCollection
 {
     use \Shrikeh\PagerDuty\Collection\Traits\PromiseCollection;
 
@@ -17,6 +18,11 @@ final class OnCalls implements Collection
     public function __construct(Callback $callback)
     {
         $this->callback = $callback;
+    }
+
+    public function filteredByLevel($level)
+    {
+        return $this->getStorage()->filteredByLevel($level);
     }
 
     private function getStorage()

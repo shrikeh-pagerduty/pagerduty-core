@@ -36,12 +36,12 @@ class OnCalls implements OnCallsInterface
 
     public function users()
     {
-
         $request = new Request(
             'GET',
             static::ENDPOINT,
             ['query' => 'include[]=users']
         );
+        return $this->collection($this->client->send($request));
     }
 
     private function collection(Promise $promise)
