@@ -19,7 +19,7 @@ $onCallsHydrator = new Shrikeh\PagerDuty\Hydrator\OnCalls(
 );
 
 $jsonDecoder = new Shrikeh\PagerDuty\Decoder\Json\Webmozart(new Webmozart\Json\JsonDecoder());
-$parser = new Shrikeh\PagerDuty\Parser\OnCalls(
+$parser = new Shrikeh\PagerDuty\Parser\Response(
     $jsonDecoder,
     $onCallsHydrator
 );
@@ -42,8 +42,8 @@ $oncallRepo = new Shrikeh\PagerDuty\Repository\OnCalls\OnCalls(
     $parser
 );
 
-$foo = $oncallRepo->get();
+$whoIsOnCall = $oncallRepo->get();
 
-foreach ($foo as $oncall) {
+foreach ($whoIsOnCall as $oncall) {
     var_dump($oncall);
 }
