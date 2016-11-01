@@ -30,15 +30,12 @@ final class Users implements UsersRepositoryInterface
 
     public function findById($id, array $extras = array())
     {
-      $response = $this->client->request(
-          'GET',
-          sprintf('%s/%s', static::ENDPOINT, $id),
-          ['query' => $this->query($extras)]
-      );
-
-      $dto = json_decode($response->getBody());
-      $users[] = $this->hydrator->hydrate($dto->user);
-      return UserCollection::fromArray($users);
+        $request = new Request(
+            'GET',
+            sprintf('%s/%s', static::ENDPOINT, $id),
+            ['query' => $this->query($extras)]
+        );
+        return $this->collection($this->client->send($request));
     }
 
     private function query(array $extras = array())
@@ -54,5 +51,15 @@ final class Users implements UsersRepositoryInterface
           }
         }
         return implode('&', $newQuery);
+    }
+
+    private function collection(Promise $promise)
+    {
+        $callback = new Callback(
+            $promise,
+            $this->parser
+        );
+
+        return new UsersCollection($callback);
     }
 }
