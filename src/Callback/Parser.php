@@ -25,7 +25,12 @@ final class Parser implements Callback
 
     public function __invoke(ResponseInterface $response)
     {
-        $this->result = $this->parser->fromResponse($response);
+        $this->result = $this->deriveResult($response);
+    }
+
+    private function deriveResult(ResponseInterface $response)
+    {
+        return $this->parser->fromResponse($response);
     }
 
     public function result()
