@@ -5,7 +5,7 @@ namespace spec\Shrikeh\PagerDuty\Collection;
 use Shrikeh\PagerDuty\Entity\ContactMethod;
 use Shrikeh\PagerDuty\Entity\ContactMethod\ContactMethod as ContactMethodEntity;
 use GuzzleHttp\Psr7\Uri;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Phone;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Phone;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

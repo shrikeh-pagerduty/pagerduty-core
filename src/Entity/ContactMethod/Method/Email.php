@@ -1,11 +1,11 @@
 <?php
 
-namespace Shrikeh\PagerDuty\Entity\ContactMethod\Resource;
+namespace Shrikeh\PagerDuty\Entity\ContactMethod\Method;
 
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Type;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Type;
 
-final class Email implements Resource
+final class Email implements Method
 {
     use Type;
 

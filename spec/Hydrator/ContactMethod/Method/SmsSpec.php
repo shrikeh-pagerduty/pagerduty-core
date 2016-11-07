@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Shrikeh\PagerDuty\Hydrator\ContactMethod\Resource;
+namespace spec\Shrikeh\PagerDuty\Hydrator\ContactMethod\Method;
 
 use stdClass;
 use PhpSpec\ObjectBehavior;
@@ -23,7 +23,7 @@ class SmsSpec extends ObjectBehavior
       $dto->country_code = '44';
       $dto->enabled = true;
       $this->hydrate($dto)->shouldBeAnInstanceOf(
-          'Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Sms'
+          'Shrikeh\PagerDuty\Entity\ContactMethod\Method\Sms'
       );
   }
 }

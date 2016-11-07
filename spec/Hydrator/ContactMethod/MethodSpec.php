@@ -4,13 +4,13 @@ namespace spec\Shrikeh\PagerDuty\Hydrator\ContactMethod;
 
 use stdClass;
 use Shrikeh\PagerDuty\Hydrator;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource as ResourceEntity;
-use Shrikeh\PagerDuty\Hydrator\ContactMethod\Resource;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method as MethodEntity;
+use Shrikeh\PagerDuty\Hydrator\ContactMethod\Method;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class ResourceSpec extends ObjectBehavior
+class MethodSpec extends ObjectBehavior
 {
     function let(
         Hydrator $phone,
@@ -33,7 +33,7 @@ class ResourceSpec extends ObjectBehavior
 
     function it_iterates_over_hydrators(
         stdClass $dto,
-        ResourceEntity $entity,
+        MethodEntity $entity,
         $phone,
         $email,
         $sms,

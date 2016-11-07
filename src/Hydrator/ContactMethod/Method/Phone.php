@@ -1,10 +1,10 @@
 <?php
 
-namespace Shrikeh\PagerDuty\Hydrator\ContactMethod\Resource;
+namespace Shrikeh\PagerDuty\Hydrator\ContactMethod\Method;
 
 use stdClass;
 use Shrikeh\PagerDuty\Hydrator;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Phone as PhoneEntity;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Phone as PhoneEntity;
 
 final class Phone implements Hydrator
 {

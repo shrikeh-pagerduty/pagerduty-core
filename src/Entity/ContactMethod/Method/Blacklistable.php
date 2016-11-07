@@ -1,6 +1,6 @@
 <?php
 
-namespace Shrikeh\PagerDuty\Entity\ContactMethod\Resource;
+namespace Shrikeh\PagerDuty\Entity\ContactMethod\Method;
 
 interface Blacklistable
 {

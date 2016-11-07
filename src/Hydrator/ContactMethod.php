@@ -8,14 +8,14 @@ use stdClass;
 
 final class ContactMethod implements Hydrator
 {
-    private $resourceHydrator;
+    private $methodHydrator;
     private $uriHydrator;
 
     public function __construct(
-        Hydrator $resourceHydrator,
+        Hydrator $methodHydrator,
         Hydrator $uriHydrator
     ) {
-        $this->resourceHydrator = $resourceHydrator;
+        $this->resourceHydrator = $methodHydrator;
         $this->uriHydrator = $uriHydrator;
     }
 

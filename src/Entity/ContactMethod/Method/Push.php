@@ -1,16 +1,16 @@
 <?php
 
-namespace Shrikeh\PagerDuty\Entity\ContactMethod\Resource;
+namespace Shrikeh\PagerDuty\Entity\ContactMethod\Method;
 
 use InvalidArgumentException;
 use OutOfBoundsException;
 
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Blacklisted;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Blacklistable;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Type;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Blacklisted;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Blacklistable;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Type;
 
-final class Push implements Resource, Blacklistable
+final class Push implements Method, Blacklistable
 {
     const MAX_ADDRESS_LENGTH = 64;
 

@@ -7,7 +7,7 @@ use Shrikeh\PagerDuty\Entity\ContactMethod as ContactMethodInterface;
 
 final class ContactMethod implements ContactMethodInterface
 {
-    private $resource;
+    private $method;
 
     private $self;
 
@@ -16,13 +16,13 @@ final class ContactMethod implements ContactMethodInterface
     private $label;
 
     public static function fromApi(
-        Resource $resource,
+        Method $method,
         UriInterface $self,
         $summary,
         $label
     ) {
         return new static(
-            $resource,
+            $method,
             $summary,
             $label,
             $self
@@ -30,12 +30,12 @@ final class ContactMethod implements ContactMethodInterface
     }
 
     private function __construct(
-        Resource $resource,
+        Method $method,
         $summary,
         $label,
         UriInterface $self = null
     ) {
-        $this->resource = $resource;
+        $this->resource = $method;
         $this->self = $self;
         $this->summary = $summary;
     }

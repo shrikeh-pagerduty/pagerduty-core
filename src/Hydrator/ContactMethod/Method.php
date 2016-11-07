@@ -13,7 +13,7 @@ use Shrikeh\Collection\ClosedOuterIteratorTrait;
 use Shrikeh\Collection\OuterIteratorTrait;
 use Shrikeh\PagerDuty\Collection\Traits\ThrowImmutable;
 
-class Resource extends IteratorIterator implements Collection, Hydrator
+class Method extends IteratorIterator implements Collection, Hydrator
 {
     use NamedConstructorsTrait;
     use ObjectStorageTrait;

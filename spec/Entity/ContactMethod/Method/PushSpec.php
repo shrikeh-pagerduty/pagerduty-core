@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Shrikeh\PagerDuty\Entity\ContactMethod\Resource;
+namespace spec\Shrikeh\PagerDuty\Entity\ContactMethod\Method;
 
 use stdClass;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Push;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Push;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;

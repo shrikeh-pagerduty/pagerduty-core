@@ -1,13 +1,13 @@
 <?php
 
-namespace Shrikeh\PagerDuty\Entity\ContactMethod\Resource;
+namespace Shrikeh\PagerDuty\Entity\ContactMethod\Method;
 
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Blacklisted;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Blacklistable;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Type;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Blacklisted;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Blacklistable;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Type;
 
-final class Phone implements Resource, Blacklistable
+final class Sms implements Method, Blacklistable
 {
     use Type;
     use Blacklisted;
@@ -19,10 +19,12 @@ final class Phone implements Resource, Blacklistable
     public function __construct(
         $number,
         $countryCode,
+        $enabled,
         $blacklisted = false
     ) {
         $this->number = $number;
         $this->countryCode = $countryCode;
+        $this->enabled = $enabled;
         $this->blacklisted = $blacklisted;
     }
 
@@ -39,6 +41,11 @@ final class Phone implements Resource, Blacklistable
     public function number()
     {
         return $this->number;
+    }
+
+    public function enabled()
+    {
+        return $this->enabled;
     }
 
     public function render($prependCountryCode = true)

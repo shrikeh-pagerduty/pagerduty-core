@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Shrikeh\PagerDuty\Hydrator\ContactMethod\Resource;
+namespace spec\Shrikeh\PagerDuty\Hydrator\ContactMethod\Method;
 
 use stdClass;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Push as PushEntity;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Push as PushEntity;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -29,7 +29,7 @@ class PushSpec extends ObjectBehavior
           $sounds->file = 'file';
           $dto->sounds = [$sounds];
           $this->hydrate($dto)->shouldBeAnInstanceOf(
-              'Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Push'
+              'Shrikeh\PagerDuty\Entity\ContactMethod\Method\Push'
           );
       }
 }

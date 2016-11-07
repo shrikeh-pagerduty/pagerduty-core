@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Shrikeh\PagerDuty\Hydrator\ContactMethod\Resource;
+namespace spec\Shrikeh\PagerDuty\Hydrator\ContactMethod\Method;
 
 use stdClass;
 
@@ -24,7 +24,7 @@ class EmailSpec extends ObjectBehavior
       $dto->send_html_email = true;
       $dto->address = 'foo@example.com';
       $this->hydrate($dto)->shouldBeAnInstanceOf(
-          'Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Email'
+          'Shrikeh\PagerDuty\Entity\ContactMethod\Method\Email'
       );
   }
 }

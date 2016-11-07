@@ -1,9 +1,9 @@
 <?php
 
-namespace spec\Shrikeh\PagerDuty\Hydrator\ContactMethod\Resource;
+namespace spec\Shrikeh\PagerDuty\Hydrator\ContactMethod\Method;
 
 use stdClass;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Phone as PhoneEntity;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Phone as PhoneEntity;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -24,7 +24,7 @@ class PhoneSpec extends ObjectBehavior
         $dto->address = '111111111';
         $dto->country_code = '44';
         $this->hydrate($dto)->shouldBeAnInstanceOf(
-            'Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Phone'
+            'Shrikeh\PagerDuty\Entity\ContactMethod\Method\Phone'
         );
     }
 }

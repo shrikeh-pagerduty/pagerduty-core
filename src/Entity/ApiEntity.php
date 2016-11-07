@@ -2,7 +2,7 @@
 
 namespace Shrikeh\PagerDuty\Entity;
 
-interface User
+interface ApiEntity
 {
-    
+    public function self();
 }

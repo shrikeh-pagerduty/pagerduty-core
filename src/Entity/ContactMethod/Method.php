@@ -2,7 +2,7 @@
 
 namespace Shrikeh\PagerDuty\Entity\ContactMethod;
 
-interface Resource
+interface Method
 {
     public function __toString();
 

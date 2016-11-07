@@ -5,7 +5,7 @@ namespace Shrikeh\PagerDuty\Collection;
 use FilterIterator;
 use Shrikeh\PagerDuty\Collection;
 use Shrikeh\PagerDuty\Entity\ContactMethod;
-use Shrikeh\PagerDuty\Entity\ContactMethod\Resource\Blacklistable;
+use Shrikeh\PagerDuty\Entity\ContactMethod\Method\Blacklistable;
 
 final class ContactMethods extends FilterIterator implements Collection
 {
@@ -31,11 +31,11 @@ final class ContactMethods extends FilterIterator implements Collection
         return (!$this->isBlacklisted($this->getStorage()->current()));
     }
 
-    public function filterByResource($resource, $excludeBlacklisted = true)
+    public function filterByMethod($method, $excludeBlacklisted = true)
     {
         $methods = [];
         foreach ($this->getStorage() as $contactMethod) {
-            if ($contactMethod->method() == $resource) {
+            if ($contactMethod->method() == $method) {
                 $methods[] = $contactMethod;
             }
         }

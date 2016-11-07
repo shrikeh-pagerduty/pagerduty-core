@@ -10,7 +10,5 @@ interface ContactMethod
 
     public function summary();
 
-    public function self();
-
     public function label();
 }
